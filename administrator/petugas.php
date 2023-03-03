@@ -115,7 +115,7 @@ include '../layouts/navbar_admin_petugas.php';
                               <p>Apakah Anda yakin akan menghapus data <b><?= $d_tb_petugas['nama_petugas'] ?></b> !!!</p>
                             </div>
                             <div class="modal-footer justify-content-between">
-                              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                              <button type="button" class="btn btn-default" data-dismiss="modal">Tutup</button>
                               <a href="hapus_petugas.php?id_petugas=<?php echo $d_tb_petugas['id_petugas']; ?>" class="btn btn-primary">Hapus</a>
                             </div>
                           </form>
@@ -130,7 +130,7 @@ include '../layouts/navbar_admin_petugas.php';
                         <div class="modal-content">
                           <div class="modal-header">
                             <h4 class="modal-title">Ubah Data Petugas</h4>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Tutup">
                               <span aria-hidden="true">&times;</span>
                             </button>
                           </div>
@@ -139,15 +139,15 @@ include '../layouts/navbar_admin_petugas.php';
                               <div class="form-group">
                                 <label>Nama Petugas</label>
                                 <input type="text" name="id_petugas" value="<?php echo $d_tb_petugas['id_petugas']; ?>" hidden>
-                                <input type="text" class="form-control" name="nama_petugas" value="<?php echo $d_tb_petugas['nama_petugas']; ?>" placeholder="Masukkan Nama Petugas">
+                                <input type="text" class="form-control" name="nama_petugas" value="<?php echo $d_tb_petugas['nama_petugas']; ?>" placeholder="Masukkan Nama Petugas" required>
                               </div>
                               <div class="form-group">
                                 <label>Username</label>
-                                <input type="text" class="form-control" name="username" value="<?php echo $d_tb_petugas['username']; ?>" placeholder="Masukkan Username">
+                                <input type="username" class="form-control" name="username" value="<?php echo $d_tb_petugas['username']; ?>" placeholder="Masukkan Username" required>
                               </div>
                               <div class="form-group">
                                 <label>Password</label>
-                                <input type="password" class="form-control" name="password" value="<?php echo $d_tb_petugas['password']; ?>" placeholder="Masukkan Password">
+                                <input type="password" class="form-control" name="password" value="<?php echo $d_tb_petugas['password']; ?>" placeholder="Masukkan Password" required>
                                 <i>
                                   <font color="red">Abaikan jika password tidak di rubah *</font>
                                 </i>
@@ -169,7 +169,7 @@ include '../layouts/navbar_admin_petugas.php';
                               </div>
                             </div>
                             <div class="modal-footer justify-content-between">
-                              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                              <button type="button" class="btn btn-default" data-dismiss="modal">Tutup</button>
                               <button type="submit" class="btn btn-primary">Simpan</button>
                             </div>
                           </form>
@@ -194,19 +194,19 @@ include '../layouts/navbar_admin_petugas.php';
                           <div class="modal-body">
                             <div class="form-group">
                               <label>Nama Petugas</label>
-                              <input type="text" class="form-control" name="nama_petugas" placeholder="Masukkan Nama Petugas">
+                              <input type="text" class="form-control" name="nama_petugas" placeholder="Masukkan Nama Petugas" required>
                             </div>
                             <div class="form-group">
                               <label>Username</label>
-                              <input type="text" class="form-control" name="username" placeholder="Masukkan Username">
+                              <input type="username" class="form-control" name="username" placeholder="Masukkan Username" required>
                             </div>
                             <div class="form-group">
                               <label>Password</label>
-                              <input type="password" class="form-control" name="password" placeholder="Masukkan Password">
+                              <input type="password" class="form-control" name="password" placeholder="Masukkan Password" required>
                             </div>
                             <div class="form-group">
                               <label>Level</label>
-                              <select class="form-control" name="id_level">
+                              <select class="form-control" name="id_level" required>
                                 <option value="">~ Pilih Level ~</option>
                                 <option value="1">Admin</option>
                                 <option value="2">Petugas</option>
@@ -214,7 +214,7 @@ include '../layouts/navbar_admin_petugas.php';
                             </div>
                           </div>
                           <div class="modal-footer justify-content-between">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Tutup</button>
                             <button type="submit" class="btn btn-primary">Simpan</button>
                           </div>
                         </form>

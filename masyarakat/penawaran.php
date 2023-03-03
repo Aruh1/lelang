@@ -66,7 +66,7 @@ include '../layouts/navbar_masyarakat.php';
                     <div class="modal-dialog">
                       <div class="modal-content">
                         <div class="modal-header">
-                          <h4 class="modal-title">Masukan Jumlah Tawaran</h4>
+                          <h4 class="modal-title">Masukkan Jumlah Tawaran</h4>
                           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                           </button>
@@ -85,12 +85,12 @@ include '../layouts/navbar_masyarakat.php';
                               <div class="form-group">
                                 <label>Nominal Tawaran</label>
                                 <input type="text" name="id_user" value="<?php echo $d_tb_masyarakat['id_user']; ?>" hidden>
-                                <input type="text" class="form-control" name="penawaran_harga" placeholder="Silahkan Masukan Tawaran Anda ...">
+                                <input type="number" class="form-control" name="penawaran_harga" placeholder="Silakan Masukkan Tawaran Anda ..." required>
                               </div>
                             <?php } ?>
                           </div>
                           <div class="modal-footer justify-content-between">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Tutup</button>
                             <button type="submit" class="btn btn-primary">Tawar</button>
                           </div>
                         </form>
@@ -167,7 +167,7 @@ include '../layouts/navbar_masyarakat.php';
                                 <p>Apakah Anda Yakin Akan Menghapus Data <b><?= $d_history_lelang['nama_barang'] ?></b> !!!</p>
                               </div>
                               <div class="modal-footer justify-content-between">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Tutup</button>
                                 <a href="hapus_penawaran.php?id_history=<?php echo $d_history_lelang['id_history']; ?>" class="btn btn-primary">Hapus</a>
                               </div>
                             </form>
@@ -197,7 +197,7 @@ include '../layouts/navbar_masyarakat.php';
                                 </div>
                               </div>
                               <div class="modal-footer justify-content-between">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Tutup</button>
                                 <button type="submit" class="btn btn-primary">Simpan</button>
                               </div>
                             </form>

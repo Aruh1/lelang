@@ -55,14 +55,14 @@
 
         <form action="cek_login_masyarakat.php" method="post">
           <div class="input-group mb-3">
-            <input type="username" name="username" class="form-control" placeholder="Username">
+            <input type="username" name="username" class="form-control" placeholder="Username" required>
             <div class="input-group-append">
               <div class="input-group-text">
               </div>
             </div>
           </div>
           <div class="input-group mb-3">
-            <input type="password" name="password" class="form-control" placeholder="Password">
+            <input type="password" name="password" class="form-control" placeholder="Password"  required>
             <div class="input-group-append">
               <div class="input-group-text">
               </div>

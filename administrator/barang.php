@@ -111,7 +111,7 @@ include '../layouts/navbar_admin_petugas.php';
                               <p>Apakah Anda Yakin Akan Menghapus Data <b><?= $d_tb_barang['nama_barang'] ?></b>!!!</p>
                             </div>
                             <div class="modal-footer justify-content-between">
-                              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                              <button type="button" class="btn btn-default" data-dismiss="modal">Tutup</button>
                               <a href="hapus_barang.php?id_barang=<?php echo $d_tb_barang['id_barang']; ?>" class="btn btn-primary">Hapus</a>
                             </div>
                           </form>
@@ -135,15 +135,15 @@ include '../layouts/navbar_admin_petugas.php';
                               <div class="form-group">
                                 <label>Nama Barang</label>
                                 <input type="text" name="id_barang" value="<?php echo $d_tb_barang['id_barang']; ?>" hidden>
-                                <input type="text" class="form-control" value="<?php echo $d_tb_barang['nama_barang']; ?>" name="nama_barang" placeholder="Nama Barang">
+                                <input type="text" class="form-control" value="<?php echo $d_tb_barang['nama_barang']; ?>" name="nama_barang" placeholder="Nama Barang" required>
                               </div>
                               <div class="form-group">
                                 <label>Tanggal Barang</label>
-                                <input type="date" class="form-control" name="tgl" value="<?php echo $d_tb_barang['tgl']; ?>" placeholder="Tanggal Barang">
+                                <input type="date" class="form-control" name="tgl" value="<?php echo $d_tb_barang['tgl']; ?>" placeholder="Tanggal Barang" required>
                               </div>
                               <div class="form-group">
                                 <label>Harga Barang</label>
-                                <input type="number" class="form-control" name="harga_awal" value="<?php echo $d_tb_barang['harga_awal']; ?>" placeholder="Harga Awal">
+                                <input type="number" class="form-control" name="harga_awal" value="<?php echo $d_tb_barang['harga_awal']; ?>" placeholder="Harga Awal" required>
                               </div>
                               <div class="form-group">
                                 <label>Deskripsi Barang</label>
@@ -151,7 +151,7 @@ include '../layouts/navbar_admin_petugas.php';
                               </div>
                             </div>
                             <div class="modal-footer justify-content-between">
-                              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                              <button type="button" class="btn btn-default" data-dismiss="modal">Tutup</button>
                               <button type="submit" class="btn btn-primary">Simpan</button>
                             </div>
                           </form>
@@ -176,15 +176,15 @@ include '../layouts/navbar_admin_petugas.php';
                       <div class="modal-body">
                         <div class="form-group">
                           <label>Nama Barang</label>
-                          <input type="text" class="form-control" name="nama_barang" placeholder="Nama Barang">
+                          <input type="text" class="form-control" name="nama_barang" placeholder="Nama Barang" required>
                         </div>
                         <div class="form-group">
                           <label>Tanggal Barang</label>
-                          <input type="date" class="form-control" name="tgl" placeholder="Tanggal Barang">
+                          <input type="date" class="form-control" name="tgl" placeholder="Tanggal Barang" required>
                         </div>
                         <div class="form-group">
                           <label>Harga Barang</label>
-                          <input type="number" class="form-control" name="harga_awal" placeholder="Harga Awal">
+                          <input type="number" class="form-control" name="harga_awal" placeholder="Harga Awal" required>
                         </div>
                         <div class="form-group">
                           <label>Deskripsi Barang</label>
@@ -192,7 +192,7 @@ include '../layouts/navbar_admin_petugas.php';
                         </div>
                       </div>
                       <div class="modal-footer justify-content-between">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Tutup</button>
                         <button type="submit" class="btn btn-primary">Simpan</button>
                       </div>
                     </form>
