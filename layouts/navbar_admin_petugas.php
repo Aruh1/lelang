@@ -43,7 +43,7 @@ if ($_SESSION['id_level'] == "") {
         <ul class="navbar-nav">
           <!-- Menu Khusus admin -->
           <li class="nav-item">
-            <a href="index.php" class="nav-link">Home</a>
+            <a href="index.php" class="nav-link">Beranda</a>
           </li>
           <!-- Menu Khusus Petugas dan Admin -->
           <li class="nav-item">

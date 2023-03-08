@@ -98,7 +98,6 @@
               </div>
               <!-- /.modal-dialog -->
             </div>
-
           <?php } ?>
         </tbody>
       </table>

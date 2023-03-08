@@ -78,7 +78,7 @@ include '../layouts/navbar_admin_petugas.php';
                 </thead>
                 <tbody>
                   <?php
-                  $no = 1;
+                  $no = 0;
                   include "../koneksi.php";
                   $tb_lelang    = mysqli_query($koneksi, "SELECT * FROM tb_lelang INNER JOIN tb_barang ON tb_lelang.id_barang=tb_barang.id_barang INNER JOIN tb_petugas ON tb_lelang.id_petugas=tb_petugas.id_petugas ");
                   while ($d_tb_lelang = mysqli_fetch_array($tb_lelang)) {

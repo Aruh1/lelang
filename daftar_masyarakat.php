@@ -51,7 +51,7 @@
             </div>
           </div>
           <div class="input-group mb-3">
-            <input type="text" name="telp" class="form-control" placeholder="Nomor Telepon" required>
+            <input type="number" name="telp" class="form-control" placeholder="Nomor Telepon" required>
             <div class="input-group-append">
               <div class="input-group-text">
               </div>
