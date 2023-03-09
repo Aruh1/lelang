@@ -51,7 +51,7 @@
             </div>
           </div>
           <div class="input-group mb-3">
-            <input type="number" name="telp" class="form-control" placeholder="Nomor Telepon" required>
+            <input type="tel" name="telp" class="form-control" placeholder="Nomor Telepon +62/08" pattern="^(?:\+62|08)[1-9][0-9]{7,11}$" required>
             <div class="input-group-append">
               <div class="input-group-text">
               </div>
