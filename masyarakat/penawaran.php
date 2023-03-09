@@ -85,7 +85,7 @@ include '../layouts/navbar_masyarakat.php';
                               <div class="form-group">
                                 <label>Nominal Tawaran</label>
                                 <input type="text" name="id_user" value="<?php echo $d_tb_masyarakat['id_user']; ?>" hidden>
-                                <input type="number" class="form-control" name="penawaran_harga" placeholder="Silakan Masukkan Tawaran Anda ..." required>
+                                <input type="number" class="form-control" name="penawaran_harga" placeholder="Silakan Masukkan Tawaran Anda ..." min="0"  required>
                               </div>
                             <?php } ?>
                           </div>

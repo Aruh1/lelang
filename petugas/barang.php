@@ -143,7 +143,7 @@ include '../layouts/navbar_admin_petugas.php';
                               </div>
                               <div class="form-group">
                                 <label>Harga Barang</label>
-                                <input type="number" class="form-control" name="harga_awal" value="<?php echo $d_tb_barang['harga_awal']; ?>" placeholder="Harga Awal ..." required>
+                                <input type="number" class="form-control" name="harga_awal" value="<?php echo $d_tb_barang['harga_awal']; ?>" placeholder="Harga Awal ..." min="0" required>
                               </div>
                               <div class="form-group">
                                 <label>Deskripsi Barang</label>
@@ -184,7 +184,7 @@ include '../layouts/navbar_admin_petugas.php';
                         </div>
                         <div class="form-group">
                           <label>Harga Barang</label>
-                          <input type="number" class="form-control" name="harga_awal" placeholder="Harga Awal ..." required>
+                          <input type="number" class="form-control" name="harga_awal" placeholder="Harga Awal ..." min="0" required>
                         </div>
                         <div class="form-group">
                           <label>Deskripsi Barang</label>
