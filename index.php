@@ -71,7 +71,7 @@
 
           <div class="social-auth-links text-center">
             <button type="submit" class="btn btn-primary btn-block btn-block">Login Masyarakat</button>
-            <a href="login.php" class="btn btn-info btn-block btn-block">Login Admin</a>
+            <a href="daftar_masyarakat.php" class="btn btn-info btn-block btn-block">Daftar Baru Masyarakat</a>
           </div>
         </form>
         <p class="mb-0 text-center">
@@ -80,7 +80,7 @@
               <div class="arrow">Sign Up</div>
             </div>
           </button> -->
-          <a href="daftar_masyarakat.php" class="text-center">Daftar Baru Masyarakat</a>
+          <a href="login.php" class="text-center">Login Admin / Petugas</a>
         </p>
       </div>
       <!-- /.login-card-body -->
