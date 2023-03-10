@@ -34,13 +34,14 @@
             $d_harga_tertinggi = $harga_tertinggi['penawaran_harga'];
             $pemenang = mysqli_query($koneksi, "SELECT * FROM history_lelang where penawaran_harga='$harga_tertinggi[penawaran_harga]'");
             $d_pemenang = mysqli_fetch_array($pemenang);
-            $tb_masyarakat = mysqli_query($koneksi, "SELECT * FROM tb_masyarakat where id_user='$d_pemenang[id_user]'");
+            if ($d_pemenang != null) {
+            $tb_masyarakat = mysqli_query($koneksi, "SELECT * FROM tb_masyarakat where id_user='$d_pemenang[id_user]'");}
             $d_tb_masyarakat = mysqli_fetch_array($tb_masyarakat);
           ?>
             <tr>
               <td><?php echo $no++; ?></td>
               <td><?= $d_tb_lelang['nama_barang'] ?></td>
-              <td><?= $d_tb_masyarakat['nama_lengkap'] ?></td>
+              <td><?= $d_tb_masyarakat['nama_lengkap'] ?? null?></td>
               <td>Rp. <?= number_format($d_harga_tertinggi) ?></td>
             </tr>
             <div class="modal fade" id="modal-buka<?php echo $d_tb_lelang['id_lelang']; ?>">
@@ -54,14 +55,14 @@
                   </div>
                   <form method="post" action="update_lelang_buka.php">
                     <div class="modal-body">
-                      <p>Apakah anda ingin membuka lelang...?</p>
+                      <p>Apakah Anda ingin membuka lelang...?</p>
                       <div class="form-group">
                         <input type="text" class="form-control" value="dibuka" name="status" hidden="">
                         <input type="text" class="form-control" value="<?php echo $d_tb_lelang['id_lelang']; ?>" name="id_lelang" hidden="">
                       </div>
                     </div>
                     <div class="modal-footer justify-content-between">
-                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Tutup</button>
                       <button type="submit" class="btn btn-primary">Simpan</button>
                     </div>
                   </form>
@@ -82,14 +83,14 @@
                   </div>
                   <form method="post" action="update_lelang_tutup.php">
                     <div class="modal-body">
-                      <p>Apakah anda ingin menutup lelang...?</p>
+                      <p>Apakah Anda ingin menutup lelang...?</p>
                       <div class="form-group">
                         <input type="text" class="form-control" value="ditutup" name="status" hidden="">
                         <input type="text" class="form-control" value="<?php echo $d_tb_lelang['id_lelang']; ?>" name="id_lelang" hidden="">
                       </div>
                     </div>
                     <div class="modal-footer justify-content-between">
-                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Tutup</button>
                       <button type="submit" class="btn btn-primary">Simpan</button>
                     </div>
                   </form>
@@ -136,7 +137,7 @@
                 </div>
               </div>
               <div class="modal-footer justify-content-between">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Tutup</button>
                 <button type="submit" class="btn btn-primary">Simpan</button>
               </div>
             </form>

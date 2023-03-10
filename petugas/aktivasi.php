@@ -87,7 +87,8 @@ include '../layouts/navbar_admin_petugas.php';
                     $d_harga_tertinggi = $harga_tertinggi['penawaran_harga'];
                     $pemenang = mysqli_query($koneksi, "SELECT * FROM history_lelang where id_lelang='$d_tb_lelang[id_lelang]'");
                     $d_pemenang = mysqli_fetch_array($pemenang);
-                    $tb_masyarakat = mysqli_query($koneksi, "SELECT * FROM tb_masyarakat where id_user='$d_pemenang[id_user]'");
+                    if ($d_pemenang != null) {
+                    $tb_masyarakat = mysqli_query($koneksi, "SELECT * FROM tb_masyarakat where id_user='$d_pemenang[id_user]'"); }
                     $d_tb_masyarakat = mysqli_fetch_array($tb_masyarakat);
                   ?>
                     <tr>
@@ -98,7 +99,7 @@ include '../layouts/navbar_admin_petugas.php';
                         <?php if ($d_tb_lelang['status'] == 'dibuka') { ?>
                           -
                         <?php } else { ?>
-                          <?= $d_tb_masyarakat['nama_lengkap'] ?>
+                          <?= $d_tb_masyarakat['nama_lengkap'] ?? null?>
                         <?php } ?>
                       </td>
                       <td>
@@ -163,7 +164,7 @@ include '../layouts/navbar_admin_petugas.php';
                           </div>
                           <form method="post" action="update_lelang_tutup.php">
                             <div class="modal-body">
-                              <p>Apakah anda ingin menutup lelang?</p>
+                              <p>Apakah Anda ingin menutup lelang?</p>
                               <div class="form-group">
                                 <input type="text" class="form-control" value="ditutup" name="status" hidden="">
                                 <input type="text" class="form-control" value="<?php echo $d_tb_masyarakat['id_user']; ?>" name="id_user" hidden="">
