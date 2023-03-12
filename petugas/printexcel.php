@@ -68,8 +68,7 @@ include '../layouts/header.php';
                   $d_pemenang = mysqli_fetch_array($pemenang);
                   if ($d_pemenang != null) {
                   $tb_masyarakat = mysqli_query($koneksi, "SELECT * FROM tb_masyarakat where id_user='$d_pemenang[id_user]'");}
-                  if ($d_pemenang != null) {
-                  $d_tb_masyarakat = mysqli_fetch_array($tb_masyarakat);}
+                  $d_tb_masyarakat = mysqli_fetch_array($tb_masyarakat);
                 ?>
                   <?php
                   if ($d_tb_lelang['status'] == 'dibuka') { ?>
@@ -130,7 +129,7 @@ include '../layouts/header.php';
                         </div>
                         <form method="post" action="update_lelang_tutup.php">
                           <div class="modal-body">
-                            <p>Apakah anda ingin menutup lelang...?</p>
+                            <p>Apakah Anda ingin menutup lelang...?</p>
                             <div class="form-group">
                               <input type="text" class="form-control" value="ditutup" name="status" hidden="">
                               <input type="text" class="form-control" value="<?php echo $d_tb_lelang['id_lelang']; ?>" name="id_lelang" hidden="">

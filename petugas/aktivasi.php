@@ -89,7 +89,8 @@ include '../layouts/navbar_admin_petugas.php';
                     $d_pemenang = mysqli_fetch_array($pemenang);
                     if ($d_pemenang != null) {
                     $tb_masyarakat = mysqli_query($koneksi, "SELECT * FROM tb_masyarakat where id_user='$d_pemenang[id_user]'"); }
-                    $d_tb_masyarakat = mysqli_fetch_array($tb_masyarakat);
+                    if ($d_pemenang != null) {
+                    $d_tb_masyarakat = mysqli_fetch_array($tb_masyarakat);}
                   ?>
                     <tr>
                       <td><?php echo $no++; ?></td>

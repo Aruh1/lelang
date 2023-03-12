@@ -1,5 +1,5 @@
 <?php 
-$koneksi = mysqli_connect("localhost","root","","tod");
+$koneksi = mysqli_connect("localhost","root","","db_lelang");
 
 // Check connection
 if (mysqli_connect_errno()){

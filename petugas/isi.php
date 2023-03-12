@@ -1,7 +1,7 @@
 <div class="col-lg-12">
   <div class="card">
     <div class="card-header">
-      <h3 class="card-title">Data Realtime Lelang Online</h3>
+      <h3 class="card-title">Data Realtime Lelang Daring</h3>
 
       <div class="card-tools">
         <div class="input-group input-group-sm" style="width: 150px;">
@@ -36,7 +36,8 @@
             $d_pemenang = mysqli_fetch_array($pemenang);
             if ($d_pemenang != null) {
             $tb_masyarakat = mysqli_query($koneksi, "SELECT * FROM tb_masyarakat where id_user='$d_pemenang[id_user]'");}
-            $d_tb_masyarakat = mysqli_fetch_array($tb_masyarakat);
+            if ($d_pemenang != null) {
+            $d_tb_masyarakat = mysqli_fetch_array($tb_masyarakat);}
           ?>
             <tr>
               <td><?php echo $no++; ?></td>

@@ -19,7 +19,7 @@ if($cek > 0){
 	$_SESSION['username'] = $username;
 	$_SESSION['password'] = md5($password);
 	$_SESSION['status'] = "login";
-	setcookie('sekolah', $username, time() + (86400 * 30), "/");
+	setcookie('lelang', $username, time() + (86400 * 30), "/");
 	header("location:masyarakat/index.php");
 }else{
 	header("location:index.php?info=gagal");

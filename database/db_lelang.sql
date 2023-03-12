@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 07, 2023 at 07:19 AM
+-- Generation Time: Mar 12, 2023 at 03:44 PM
 -- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.2
+-- PHP Version: 7.4.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `sistem_lelang`
+-- Database: `db_lelang`
 --
 
 -- --------------------------------------------------------
@@ -36,15 +36,6 @@ CREATE TABLE `history_lelang` (
   `penawaran_harga` int(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `history_lelang`
---
-
-INSERT INTO `history_lelang` (`id_history`, `id_lelang`, `id_barang`, `id_user`, `penawaran_harga`) VALUES
-(2, 2, 2, 2, 20000000),
-(5, 1, 2, 1, 10000000),
-(7, 2, 5, 1, 10000000);
-
 -- --------------------------------------------------------
 
 --
@@ -58,14 +49,6 @@ CREATE TABLE `tb_barang` (
   `harga_awal` int(20) NOT NULL,
   `deskripsi_barang` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `tb_barang`
---
-
-INSERT INTO `tb_barang` (`id_barang`, `nama_barang`, `tgl`, `harga_awal`, `deskripsi_barang`) VALUES
-(2, 'Blender Antik', '1990-07-12', 5000000, 'Kondisi Normal Sering Dipakai'),
-(5, 'Kulkas 2 Pintu', '2023-02-01', 2000000, 'Kondisi mulus');
 
 -- --------------------------------------------------------
 
@@ -82,14 +65,6 @@ CREATE TABLE `tb_lelang` (
   `id_petugas` int(11) NOT NULL,
   `status` enum('dibuka','ditutup') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `tb_lelang`
---
-
-INSERT INTO `tb_lelang` (`id_lelang`, `id_barang`, `tgl_lelang`, `harga_akhir`, `id_user`, `id_petugas`, `status`) VALUES
-(1, 2, '2023-02-02', 0, 0, 2, 'dibuka'),
-(2, 5, '2023-02-02', 20000000, 2, 2, 'ditutup');
 
 -- --------------------------------------------------------
 
@@ -120,18 +95,9 @@ CREATE TABLE `tb_masyarakat` (
   `id_user` int(11) NOT NULL,
   `nama_lengkap` varchar(25) NOT NULL,
   `username` varchar(25) NOT NULL,
-  `password` varchar(25) NOT NULL,
+  `password` varchar(255) NOT NULL,
   `telp` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `tb_masyarakat`
---
-
-INSERT INTO `tb_masyarakat` (`id_user`, `nama_lengkap`, `username`, `password`, `telp`) VALUES
-(1, 'Suteja', 'pengguna1', 'pengguna1', '089999999999'),
-(2, 'Selamet', 'pengguna2', 'pengguna2', '089888888888'),
-(3, 'siapaya', 'siapaya', 'siapaya', '089888888888');
 
 -- --------------------------------------------------------
 
@@ -153,8 +119,7 @@ CREATE TABLE `tb_petugas` (
 
 INSERT INTO `tb_petugas` (`id_petugas`, `nama_petugas`, `username`, `password`, `id_level`) VALUES
 (1, 'Administrator', 'admin', 'admin', 1),
-(2, 'Petugas', 'petugas', 'petugas', 2),
-(3, 'Petugas 1', 'petugas1', 'petugas1', 2);
+(2, 'Petugas', 'petugas', 'petugas', 2);
 
 --
 -- Indexes for dumped tables
@@ -204,19 +169,19 @@ ALTER TABLE `tb_petugas`
 -- AUTO_INCREMENT for table `history_lelang`
 --
 ALTER TABLE `history_lelang`
-  MODIFY `id_history` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_history` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `tb_barang`
 --
 ALTER TABLE `tb_barang`
-  MODIFY `id_barang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_barang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `tb_lelang`
 --
 ALTER TABLE `tb_lelang`
-  MODIFY `id_lelang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_lelang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `tb_level`
@@ -228,7 +193,7 @@ ALTER TABLE `tb_level`
 -- AUTO_INCREMENT for table `tb_masyarakat`
 --
 ALTER TABLE `tb_masyarakat`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `tb_petugas`

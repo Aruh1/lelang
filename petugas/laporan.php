@@ -12,7 +12,7 @@ include '../layouts/navbar_admin_petugas.php';
     <div class="container">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0"> Laporan Lelang Online</h1>
+          <h1 class="m-0"> Laporan Lelang Daring</h1>
         </div><!-- /.col -->
         <div class="col-sm-6">
         </div><!-- /.col -->
@@ -29,7 +29,7 @@ include '../layouts/navbar_admin_petugas.php';
         <div class="col-lg-12">
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Data Hasil Lelang Online</h3>
+              <h3 class="card-title">Data Hasil Lelang Daring</h3>
 
               <div class="card-tools">
                 <div class="input-group input-group-sm" style="width: 150px;">
@@ -84,8 +84,10 @@ include '../layouts/navbar_admin_petugas.php';
                     $d_harga_tertinggi = $harga_tertinggi['penawaran_harga'];
                     $pemenang = mysqli_query($koneksi, "SELECT * FROM history_lelang where id_lelang='$d_tb_lelang[id_lelang]'");
                     $d_pemenang = mysqli_fetch_array($pemenang);
-                    $tb_masyarakat = mysqli_query($koneksi, "SELECT * FROM tb_masyarakat where id_user='$d_pemenang[id_user]'");
-                    $d_tb_masyarakat = mysqli_fetch_array($tb_masyarakat);
+                    if ($d_pemenang != null) {
+                    $tb_masyarakat = mysqli_query($koneksi, "SELECT * FROM tb_masyarakat where id_user='$d_pemenang[id_user]'");}
+                    if ($d_pemenang != null) {
+                    $d_tb_masyarakat = mysqli_fetch_array($tb_masyarakat);}
                   ?>
                     <?php
                     if ($d_tb_lelang['status'] == 'dibuka') { ?>
@@ -94,7 +96,7 @@ include '../layouts/navbar_admin_petugas.php';
                         <td><?php echo $no++; ?></td>
                         <td><?= $d_tb_lelang['nama_barang'] ?></td>
                         <td><?= $d_tb_lelang['tgl_lelang'] ?></td>
-                        <td><?= $d_tb_masyarakat['nama_lengkap'] ?></td>
+                        <td><?= $d_tb_masyarakat['nama_lengkap'] ?? null?></td>
                         <td>Rp. <?= number_format($d_harga_tertinggi) ?></td>
                         <td>
                           <?php if ($d_tb_lelang['status'] == '') { ?>
@@ -125,7 +127,7 @@ include '../layouts/navbar_admin_petugas.php';
                               </div>
                             </div>
                             <div class="modal-footer justify-content-between">
-                              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                              <button type="button" class="btn btn-default" data-dismiss="modal">Tutup</button>
                               <button type="submit" class="btn btn-primary">Simpan</button>
                             </div>
                           </form>
@@ -146,7 +148,7 @@ include '../layouts/navbar_admin_petugas.php';
                           </div>
                           <form method="post" action="update_lelang_tutup.php">
                             <div class="modal-body">
-                              <p>Apakah anda ingin menutup lelang...?</p>
+                              <p>Apakah Anda ingin menutup lelang...?</p>
                               <div class="form-group">
                                 <input type="text" class="form-control" value="ditutup" name="status" hidden="">
                                 <input type="text" class="form-control" value="<?php echo $d_tb_lelang['id_lelang']; ?>" name="id_lelang" hidden="">
@@ -201,7 +203,7 @@ include '../layouts/navbar_admin_petugas.php';
                         </div>
                       </div>
                       <div class="modal-footer justify-content-between">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Tutup</button>
                         <button type="submit" class="btn btn-primary">Simpan</button>
                       </div>
                     </form>
