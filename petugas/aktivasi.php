@@ -78,14 +78,14 @@ include '../layouts/navbar_admin_petugas.php';
                 </thead>
                 <tbody>
                   <?php
-                  $no = 0;
+                  $no = 1;
                   include "../koneksi.php";
                   $tb_lelang    = mysqli_query($koneksi, "SELECT * FROM tb_lelang INNER JOIN tb_barang ON tb_lelang.id_barang=tb_barang.id_barang INNER JOIN tb_petugas ON tb_lelang.id_petugas=tb_petugas.id_petugas ");
                   while ($d_tb_lelang = mysqli_fetch_array($tb_lelang)) {
                     $harga_tertinggi = mysqli_query($koneksi, "select max(penawaran_harga) as penawaran_harga FROM history_lelang where id_lelang='$d_tb_lelang[id_lelang]'");
                     $harga_tertinggi = mysqli_fetch_array($harga_tertinggi);
                     $d_harga_tertinggi = $harga_tertinggi['penawaran_harga'];
-                    $pemenang = mysqli_query($koneksi, "SELECT * FROM history_lelang where id_lelang='$d_tb_lelang[id_lelang]'");
+                    $pemenang = mysqli_query($koneksi, "SELECT * FROM history_lelang where penawaran_harga='$harga_tertinggi[penawaran_harga]'");
                     $d_pemenang = mysqli_fetch_array($pemenang);
                     if ($d_pemenang != null) {
                     $tb_masyarakat = mysqli_query($koneksi, "SELECT * FROM tb_masyarakat where id_user='$d_pemenang[id_user]'"); }
