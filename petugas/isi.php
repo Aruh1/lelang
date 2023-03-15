@@ -35,14 +35,20 @@
             $pemenang = mysqli_query($koneksi, "SELECT * FROM history_lelang where penawaran_harga='$harga_tertinggi[penawaran_harga]'");
             $d_pemenang = mysqli_fetch_array($pemenang);
             if ($d_pemenang != null) {
-            $tb_masyarakat = mysqli_query($koneksi, "SELECT * FROM tb_masyarakat where id_user='$d_pemenang[id_user]'");}
+              $tb_masyarakat = mysqli_query($koneksi, "SELECT * FROM tb_masyarakat where id_user='$d_pemenang[id_user]'");
+            }
             if ($d_pemenang != null) {
-            $d_tb_masyarakat = mysqli_fetch_array($tb_masyarakat);}
+              $d_tb_masyarakat = mysqli_fetch_array($tb_masyarakat);
+            }
           ?>
             <tr>
               <td><?php echo $no++; ?></td>
               <td><?= $d_tb_lelang['nama_barang'] ?></td>
-              <td><?= $d_tb_masyarakat['nama_lengkap'] ?? null?></td>
+              <td><?php if ($d_harga_tertinggi == 0 || $d_harga_tertinggi == null) { ?>
+                  Belum ada Pemenang
+                <?php } else { ?>
+                  <?= $d_tb_masyarakat['nama_lengkap'] ?? null ?>
+                <?php } ?></td>
               <td>Rp. <?= number_format($d_harga_tertinggi) ?></td>
             </tr>
             <div class="modal fade" id="modal-buka<?php echo $d_tb_lelang['id_lelang']; ?>">
