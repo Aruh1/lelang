@@ -15,7 +15,7 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="assets/dist/css/adminlte.min.css">
   <!-- icon -->
-  <link rel="icon" href="assets/cropped-logo-192x192.png">
+  <link rel="icon" href="assets/favicon.jpeg">
 </head>
 
 <body class="hold-transition register-page">

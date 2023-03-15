@@ -10,7 +10,7 @@
 	<div class="float-right d-none d-sm-inline">
 	</div>
 	<!-- Default to the left -->
-	<strong>&copy; 2023 <a href="#">Pelelangan Daring</a> Rizki Pratama.</strong> All rights reserved.
+	<strong>&copy; 2023 <a href="#">Pelelangan Daring</a> Aruh1.</strong> All rights reserved.
 </footer>
 </div>
 <!-- ./wrapper -->
